@@ -1,4 +1,4 @@
-# 💰 ToEconomy — Plugin de Economia para PaperMC 1.8.x
+### 💰 ToEconomy — Plugin de Economia para PaperMC 1.8x a 1.21x
 
 **ToEconomy** é um plugin de economia desenvolvido em **Java** para servidores **PaperMC 1.8.x**, criado com o objetivo de ser **simples, funcional e evolutivo**, servindo tanto para uso prático quanto como **projeto de portfólio**.
 
@@ -23,6 +23,10 @@ O projeto foca no gerenciamento de saldos dos jogadores e na aplicação de boas
 - Fácil de expandir com novas funcionalidades
 - Pensado para evolução contínua
 
+### ✅ Otimizado e Universal
+- Código otimizado e compativel com outros plugins
+- Integração com o Vault
+s
 ---
 
 ## ⌨️ Comandos
@@ -54,7 +58,7 @@ Comando principal de gerenciamento de economia.
 ## 🛠️ Tecnologias Utilizadas
 
 - **Java**
-- **PaperMC 1.8.x**
+- **PaperMC 1.8x a 1.21x**
 - **SQLite**
 - JDBC
 - Estrutura orientada a objetos
