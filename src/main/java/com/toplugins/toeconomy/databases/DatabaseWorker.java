@@ -1,4 +1,4 @@
-package com.toplugins.toeconomy;
+package com.toplugins.toeconomy.databases;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;

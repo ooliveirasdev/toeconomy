@@ -1,8 +1,9 @@
 name: ToEconomy
 main: com.toplugins.toeconomy.Main
 version: 1.0.0
-
+softdepend: [Vault]
 commands:
+
   money:
     description: Comando principal de economia
     usage: /money

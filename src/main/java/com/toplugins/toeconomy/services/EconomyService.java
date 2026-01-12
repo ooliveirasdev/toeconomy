@@ -1,4 +1,7 @@
-package com.toplugins.toeconomy;
+package com.toplugins.toeconomy.services;
+
+import com.toplugins.toeconomy.databases.DatabaseWorker;
+import com.toplugins.toeconomy.databases.SQLiteDb;
 
 import java.sql.SQLException;
 import java.util.UUID;

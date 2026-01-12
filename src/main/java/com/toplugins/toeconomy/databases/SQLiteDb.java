@@ -1,4 +1,4 @@
-package com.toplugins.toeconomy;
+package com.toplugins.toeconomy.databases;
 
 import org.bukkit.plugin.java.JavaPlugin;
 

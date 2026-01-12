@@ -15,11 +15,13 @@ repositories {
     maven(url = "https://oss.sonatype.org/content/repositories/snapshots/")
     maven(url = "https://hub.spigotmc.org/nexus/content/repositories/public/")
     maven(url = "https://repo.md-5.net/content/repositories/snapshots/")
+    maven(url = "https://jitpack.io")
 }
 
 dependencies {
 
     compileOnly("org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT")
+    compileOnly("com.github.MilkBowl:VaultAPI:1.7")
 
     implementation("org.xerial:sqlite-jdbc:3.45.1.0")
 }

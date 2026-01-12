@@ -1,8 +1,6 @@
 package com.toplugins.toeconomy.commands;
 
-import com.toplugins.toeconomy.DatabaseWorker;
-import com.toplugins.toeconomy.EconomyService;
-import com.toplugins.toeconomy.SQLiteDb;
+import com.toplugins.toeconomy.services.EconomyService;
 import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 import org.bukkit.command.*;
