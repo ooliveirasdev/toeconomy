@@ -26,7 +26,7 @@ O projeto foca no gerenciamento de saldos dos jogadores e na aplicação de boas
 ### ✅ Otimizado e Universal
 - Código otimizado e compativel com outros plugins
 - Integração com o Vault
-s
+
 ---
 
 ## ⌨️ Comandos
