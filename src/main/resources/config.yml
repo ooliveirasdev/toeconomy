@@ -1,0 +1,14 @@
+database:
+  type: sqlite # sqlite ou mysql
+
+  sqlite:
+    file: economy.db
+
+  # não implementado ainda..
+
+  mysql:
+    host: localhost
+    port: 3306
+    database: minecraft
+    user: root
+    password: senha

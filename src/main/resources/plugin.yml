@@ -1,0 +1,21 @@
+name: ToEconomy
+main: com.toplugins.toeconomy.Main
+version: 1.0.0
+
+commands:
+  money:
+    description: Comando principal de economia
+    usage: /money
+  pay:
+    description: Envia dinheiro para outro jogador
+    usage: /pay <player> <valor>
+
+permissions:
+  toeconomy.basic:
+    description: Permite usar /money e /pay
+    default: true
+
+  toeconomy.admin:
+    description: Permissões administrativas de economia
+    default: op
+
