@@ -32,9 +32,9 @@ Comando principal de gerenciamento de economia.
 
 **Subcomandos:**
 - `/money` → Mostra o saldo do jogador
-- `/money add <jogador> <valor>` → Adiciona dinheiro
-- `/money remove <jogador> <valor>` → Remove dinheiro
-- `/money set <jogador> <valor>` → Define o saldo
+- `/money adicionar <jogador> <valor>` → Adiciona dinheiro
+- `/money deminuir <jogador> <valor>` → Remove dinheiro
+- `/money definir <jogador> <valor>` → Define o saldo
 
 ### `/pay <jogador> <valor>`
 - Transfere dinheiro para outro jogador
