@@ -1,6 +1,6 @@
 package com.toplugins.toeconomy.commands;
 
-import com.toplugins.toeconomy.services.EconomyService;
+import com.toplugins.toeconomy.Economy;
 import org.bukkit.Bukkit;
 import org.bukkit.command.*;
 import org.bukkit.entity.Player;
@@ -8,9 +8,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Money implements CommandExecutor {
     private final JavaPlugin plugin;
-    private final EconomyService es;
+    private final Economy es;
 
-    public Money(JavaPlugin plugin, EconomyService es) {
+    public Money(JavaPlugin plugin, Economy es) {
         this.plugin = plugin;
         this.es = es;
     }
@@ -18,7 +18,7 @@ public final class Money implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (!(sender instanceof Player)) {
-            sender.sendMessage("Apenas jogadores.");
+            sender.sendMessage("§cApenas jogadores.");
             return true;
         }
 
@@ -27,8 +27,9 @@ public final class Money implements CommandExecutor {
         if(args.length < 1) {
                 try {
                     double saldo = es.getCachedBalance(player.getUniqueId());
+                    String fsaldo = es.getFormattedCachedBalance(player.getUniqueId());
 
-                    player.sendMessage("§eEconomia§f§l>§r §aSeu saldo é de §fR$" + saldo + "§r§f.");
+                    player.sendMessage("§eEconomia§f§l>§r §aSeu saldo é de §fR$" + fsaldo);
 
                 } catch (Exception e) {
                     e.printStackTrace();

@@ -1,14 +1,22 @@
 database:
-  type: sqlite # sqlite ou mysql
+  types: "sqlite" # "mysql" ou "sqlite"
 
   sqlite:
-    file: economy.db
-
-  # não implementado ainda..
+    file: "economy.db"
 
   mysql:
-    host: localhost
+    host: "localhost"
     port: 3306
-    database: minecraft
-    user: root
-    password: senha
+    database: "toeconomy"
+    user: "root"
+    password: "senha"
+    useSSL: false
+
+    # não altere caso não tenha devido conhecimento!
+
+    pool:
+      maxPoolSize: 10
+      minIdle: 2
+      connectionTimeoutMs: 10000
+      idleTimeoutMs: 600000
+      maxLifetimeMs: 1800000

@@ -1,19 +1,24 @@
 name: ToEconomy
 main: com.toplugins.toeconomy.Main
-version: 1.0.0
+version: 1.0.5
+author: ooliveirasdev
+
 softdepend: [Vault]
+
 commands:
 
   money:
     description: Comando principal de economia
-    usage: /money
+    usage: /money [definir|adicionar|diminuir] <player> <valor>
+    aliases: [dinheiro, reais]
   pay:
     description: Envia dinheiro para outro jogador
     usage: /pay <player> <valor>
+    aliases: [pagar, transferir, pix]
 
 permissions:
   toeconomy.basic:
-    description: Permite usar /money e /pay
+    description: Permite usar comandos de nível básico
     default: true
 
   toeconomy.admin:

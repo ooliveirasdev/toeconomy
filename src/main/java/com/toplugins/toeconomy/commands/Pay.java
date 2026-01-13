@@ -1,6 +1,6 @@
 package com.toplugins.toeconomy.commands;
 
-import com.toplugins.toeconomy.services.EconomyService;
+import com.toplugins.toeconomy.Economy;
 import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 import org.bukkit.command.*;
@@ -9,9 +9,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Pay implements CommandExecutor {
     private final JavaPlugin plugin;
-    private final EconomyService es;
+    private final Economy es;
 
-    public Pay(JavaPlugin plugin, EconomyService es) {
+    public Pay(JavaPlugin plugin, Economy es) {
         this.plugin = plugin;
         this.es = es;
     }

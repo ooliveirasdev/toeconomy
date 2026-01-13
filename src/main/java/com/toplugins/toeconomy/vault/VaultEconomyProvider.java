@@ -1,6 +1,6 @@
 package com.toplugins.toeconomy.vault;
 
-import com.toplugins.toeconomy.services.EconomyService;
+import com.toplugins.toeconomy.Economy;
 import net.milkbowl.vault.economy.AbstractEconomy;
 import net.milkbowl.vault.economy.EconomyResponse;
 import org.bukkit.OfflinePlayer;
@@ -16,9 +16,9 @@ public class VaultEconomyProvider extends AbstractEconomy {
 
     private final Plugin plugin;
     private final Server server;
-    private final EconomyService economy;
+    private final Economy economy;
 
-    public VaultEconomyProvider(Plugin plugin, EconomyService economy) {
+    public VaultEconomyProvider(Plugin plugin, Economy economy) {
         this.plugin = plugin;
         this.server = plugin.getServer();
         this.economy = economy;
@@ -46,13 +46,8 @@ public class VaultEconomyProvider extends AbstractEconomy {
     @Override
     public double getBalance(OfflinePlayer player) {
         UUID uuid = player.getUniqueId();
-        try {
-            return economy.getBalance(uuid);
-        } catch (SQLException e) {
-            plugin.getLogger().warning("[Vault] getBalance falhou para " + uuid + ": " + e.getMessage());
-            // fallback pro cache pra não quebrar plugin que só quer um número
-            return economy.getCachedBalance(uuid);
-        }
+        economy.warmup(uuid);
+        return economy.getCachedBalance(uuid);
     }
 
     @Override
@@ -77,14 +72,10 @@ public class VaultEconomyProvider extends AbstractEconomy {
         }
 
         UUID uuid = player.getUniqueId();
-        try {
-            economy.addBalance(uuid, amount);
-            double estimated = economy.getCachedBalance(uuid);
-            return new EconomyResponse(amount, estimated, EconomyResponse.ResponseType.SUCCESS, null);
+        economy.addBalanceBuffered(uuid, amount);
+        double estimated = economy.getCachedBalance(uuid);
+        return new EconomyResponse(amount, estimated, EconomyResponse.ResponseType.SUCCESS, null);
 
-        } catch (SQLException e) {
-            return new EconomyResponse(0, getBalance(player), EconomyResponse.ResponseType.FAILURE, "SQL error: " + e.getMessage());
-        }
     }
 
     @Override
