@@ -14,9 +14,9 @@ O projeto foca no gerenciamento de saldos dos jogadores e na aplicação de boas
 - Suporte a transferências entre jogadores
 
 ### 📊 Banco de Dados
-- Atualmente utiliza **SQLite**
-- Estrutura preparada para futuras migrações (ex: MySQL)
-- Ideal para demonstrar evolução no uso de bancos relacionais
+- Estrutura preparada para o uso de SQLite & MySQL
+- Otimização nativa reforçada
+- Configuração simples pelo config.yml
 
 ### 🧩 Simples e Extensível
 - Código organizado e modular
@@ -25,7 +25,8 @@ O projeto foca no gerenciamento de saldos dos jogadores e na aplicação de boas
 
 ### ✅ Otimizado e Universal
 - Código otimizado e compativel com outros plugins
-- Integração com o Vault
+- Integração com o Vault e PlaceholderAPI
+- Otimização reforçada aos bancos de dados
 
 ---
 
@@ -53,6 +54,15 @@ Comando principal de gerenciamento de economia.
 | `toeconomy.basic` | Permite usar `/money` e `/pay` |
 | `toeconomy.admin` | Permite usar os subcomandos administrativos do `/money` |
 
+
+## 🧩 Placeholders
+| Placeholder | Descrição |
+|---------|----------|
+| `%toeconomy_balance%` | Retorna o saldo bruto Ex: `1500.0` |
+| `%toeconomy_formatted_balance%` | Retorna o saldo formatado Ex: `1.5K` |
+
+- Obs: Caso utilize o Vault e a placeholder dele não precisará mudar caso use saldo bruto.
+
 ---
 
 ## 🛠️ Tecnologias Utilizadas
@@ -60,5 +70,6 @@ Comando principal de gerenciamento de economia.
 - **Java**
 - **PaperMC 1.8x a 1.21x**
 - **SQLite**
+- **MySQL**
 - JDBC
 - Estrutura orientada a objetos
