@@ -35,7 +35,7 @@ public final class Main extends JavaPlugin {
             db.open();
             db.createTables();
         } catch (Exception e) {
-            getLogger().severe("Falha ao iniciar o database§f: &c" + e.getMessage());
+            getLogger().severe("Falha ao iniciar o database: " + e.getMessage());
             e.printStackTrace();
             getServer().getPluginManager().disablePlugin(this);
             return;
@@ -49,6 +49,13 @@ public final class Main extends JavaPlugin {
         //////////////////////////////////////////////////////////////
 
         registerVault();
+
+        getServer().getServicesManager().register(
+                Economy.class,
+                es,
+                this,
+                ServicePriority.Normal
+        );
 
         //////////////////////////////////////////////////////////////
         Bukkit.getScheduler().runTaskTimerAsynchronously(
@@ -75,13 +82,19 @@ public final class Main extends JavaPlugin {
             getLogger().info("PlaceholderAPI NÃO detectado, rodando sem placeholders externos.");
         }
 
-        getLogger().info("Sistemas carregados com sucesso! Agradecemos por usar nossos plugins &c<3");
+        getLogger().info("Sistemas carregados com sucesso! Agradecemos por usar nossos plugins <3");
+    }
+
+    public Economy getEconomy() {
+        return es;
     }
 
     @Override
     public void onDisable() {
         es.flushPending();
 
+        getServer().getServicesManager().unregister(Economy.class, es);
+        
         if (dw != null) dw.shutdown();
         if (db != null) db.close();
         if (vaultEconomyProvider != null) {
